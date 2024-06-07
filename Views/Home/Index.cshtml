@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Documento>
+
+<h1 class="text-center">Arquivos Word</h1>
+
+<div class="text-center">
+    <a class="d-flex justify-content-center align-items-center"
+       style="width:150px; height:200px; background-color:lightsteelblue; font-size:100px; text-decoration:none; color:black"
+       asp-action="CriarDocumento">
+        +
+    </a>
+</div>
+
+<hr />
+
+<div class="row">
+    <h2 class="text-center mb-4">Arquivos salvos</h2>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-2">
+            <span>Criação: @item.DataCriacao.ToString("dd/MM/yyyy HH:mm")</span>
+            <div class="d-flex justify-content-center align-items-center"
+                 style="width:150px; height:200px; background-color:lightblue; font-size:100px">
+                <a style="text-decoration:none; color:black" asp-action="EditarDocumento" asp-route-id="@item.Id">📝</a>
+            </div>
+            <span style="font-weight:bold">@item.Titulo</span>
+        </div>
+
+    }
+</div>

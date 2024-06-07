@@ -1,0 +1,21 @@
+﻿@model Documento
+
+<h2 class="text-center">Arquivo Word</h2>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="CriarDocumento" asp-controller="Home" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div> @* essa div é para aparecer mensagens de erro *@
+
+            <div class="form-group mb-3">
+                <input asp-for="Titulo" class="form-control" value="Documento sem nome"/>
+            </div>
+            
+            <div class="form-group mb-3">
+                <textarea id="tiny" asp-for="Conteudo" style="width:68vw; height:60vh;"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary w-100" value="Criar"/>
+            <a asp-action="Index" class="btn btn-info mt-3 w-100">Voltar</a>
+        </form>
+    </div>
+</div>
